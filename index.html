@@ -406,4 +406,259 @@
       background: var(--dark3);
       border: 1px solid var(--border);
       color: #ccc;
-      b
+      border-radius: 4px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .social-icon:hover,
+    .social-dropdown.active .social-icon {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0d0d0d;
+      border-top: 2px solid var(--primary);
+      padding: 1.8rem 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #555;
+      font-family: 'Rajdhani', sans-serif;
+      letter-spacing: 0.06em;
+    }
+
+    /* ===== HAMBURGER ===== */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: white; transition: all 0.3s; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+
+      .navbar-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #0d0d0d;
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+        gap: 1rem;
+        border-bottom: 2px solid var(--primary);
+      }
+
+      .navbar-links.open { display: flex; }
+
+      .section-row,
+      .servicios-inner,
+      .servicios2-inner {
+        grid-template-columns: 1fr;
+        direction: ltr;
+      }
+
+      .servicios-col-text,
+      .servicios2-col-text { border-left: none; border-top: 1px solid var(--border); }
+
+      .section-image,
+      .servicios-col-image,
+      .servicios2-col-image { min-height: 220px; }
+
+      .section-text { padding: 2.5rem 1.5rem; }
+      .servicios-col-text, .servicios2-col-text { padding: 2rem 1.5rem; }
+
+      .contacto-grid { grid-template-columns: 1fr; }
+      .header-bar h1 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <div class="logo-circle">
+        <img src="logo.jpg" alt="Logo" onerror="this.style.display='none';this.parentNode.textContent='🔧'">
+      </div>
+      <span>RC DRAG SERVICE</span>
+    </div>
+
+    <div class="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+
+    <ul class="navbar-links" id="navLinks">
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#contacto" class="navbar-cta">¡Agenda tu cita!</a></li>
+    </ul>
+  </nav>
+
+  <!-- SECCIÓN 1: Nosotros -->
+  <section class="section" id="nosotros">
+    <div class="section-row">
+      <div class="section-text">
+        <div class="section-label">Sobre nosotros</div>
+        <h2>En RC DRAG SERVICE</h2>
+        <p>
+          Nos dedicamos a la mecánica automotriz en general. Realizamos mantenimiento, reparación y diagnóstico para todo tipo de vehículos.<br><br>
+          Nuestro equipo de especialistas cuenta con la experiencia y las herramientas necesarias para mantener tu vehículo en óptimas condiciones.
+        </p>
+      </div>
+      <div class="section-image">
+        <img src="taller.jpg" alt="RC DRAG SERVICE" onerror="this.style.display='none'">
+        <div class="placeholder">🔧</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: Experiencia -->
+  <section class="section">
+    <div class="section-row reverse">
+      <div class="section-text">
+        <div class="section-label">Nuestra experiencia</div>
+        <h2>Calidad y confianza en cada servicio</h2>
+        <p>
+          En RC DRAG SERVICE trabajamos con pasión por los autos y compromiso con nuestros clientes. Cada vehículo que entra a nuestro taller recibe un diagnóstico preciso y un servicio de calidad.<br><br>
+          Ya sea un mantenimiento de rutina o una reparación mayor, contamos con el equipo y los conocimientos para darte la mejor solución.
+        </p>
+      </div>
+      <div class="section-image">
+        <img src="taller2.jpg" alt="Taller RC DRAG SERVICE" onerror="this.style.display='none'">
+        <div class="placeholder">🚗</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="servicios-section" id="servicios">
+    <div class="servicios-inner">
+      <div class="servicios-col-image">
+        <img src="servicios.jpg" alt="Servicios" onerror="this.style.display='none'">
+        <div class="placeholder">🔩</div>
+      </div>
+      <div class="servicios-col-text">
+        <h3>Nuestros Servicios</h3>
+        <div class="servicio-item">Mecánica en general.</div>
+        <div class="servicio-item">Mantenimiento preventivo y correctivo.</div>
+        <div class="servicio-item">Modificación de motores.</div>
+        <div class="servicio-item">Instalación de escapes.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS 2 -->
+  <section class="servicios2-section">
+    <div class="servicios2-inner">
+      <div class="servicios2-col-text">
+        <div class="servicio-item">Mecánica en general.</div>
+        <div class="servicio-item">Mantenimiento preventivo y correctivo.</div>
+        <div class="servicio-item">Modificación de motores.</div>
+        <div class="servicio-item">Instalación de escapes.</div>
+      </div>
+      <div class="servicios2-col-image">
+        <img src="motor.jpg" alt="Motor" onerror="this.style.display='none'">
+        <div class="placeholder">⚙️</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto-section" id="contacto">
+    <div class="contacto-inner">
+      <h2>¡Visítanos o contáctanos!</h2>
+      <p>Agenda tu cita o solicita un diagnóstico sin costo</p>
+      <br>
+      <a href="tel:TU_NUMERO" class="btn" style="margin-bottom:2.5rem;">Agendar cita</a>
+
+      <div class="contacto-grid">
+        <div class="contacto-card" onclick="window.location.href='tel:TU_NUMERO'">
+          <i class="fas fa-phone"></i>
+          <h4>Teléfono</h4>
+          <p>Tu número aquí</p>
+          <small>Click para llamar</small>
+        </div>
+        <div class="contacto-card" onclick="window.location.href='mailto:tucorreo@gmail.com'">
+          <i class="fas fa-envelope"></i>
+          <h4>Email</h4>
+          <p>Tu correo aquí</p>
+          <small>Click para escribir</small>
+        </div>
+        <div class="contacto-card" onclick="window.open('https://maps.app.goo.gl/r7x9i5iqSwVbiijg8','_blank')">
+          <i class="fas fa-map-marker-alt"></i>
+          <h4>Ubicación</h4>
+          <p>Santiago de Querétaro, Qro.</p>
+          <small>Click para ver en mapa</small>
+        </div>
+      </div>
+
+      <p class="redes-title">Síguenos en redes</p>
+      <div class="redes-sociales">
+        <div class="social-dropdown">
+          <div class="social-icon" onclick="toggleMenu(this.parentNode, event)">
+            <i class="fab fa-facebook-f"></i>
+          </div>
+          <div class="social-menu">
+            <a href="#" class="social-option" target="_blank">Tu página de Facebook</a>
+          </div>
+        </div>
+        <div class="social-dropdown">
+          <div class="social-icon" onclick="toggleMenu(this.parentNode, event)">
+            <i class="fab fa-instagram"></i>
+          </div>
+          <div class="social-menu">
+            <a href="#" class="social-option" target="_blank">@tu_instagram</a>
+          </div>
+        </div>
+        <div class="social-dropdown">
+          <div class="social-icon" onclick="toggleMenu(this.parentNode, event)">
+            <i class="fab fa-tiktok"></i>
+          </div>
+          <div class="social-menu">
+            <a href="#" class="social-option" target="_blank">@tu_tiktok</a>
+          </div>
+        </div>
+        <div class="social-dropdown">
+          <div class="social-icon" onclick="abrirWhatsApp()">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 RC DRAG SERVICE — Todos los derechos reservados — Santiago de Querétaro, Qro.</p>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    let menuAbierto = null;
+    function toggleMenu(elemento, event) {
+      if (event) event.stopPropagation();
+      if (menuAbierto && menuAbierto !== elemento) menuAbierto.classList.remove('active');
+      elemento.classList.toggle('active');
+      menuAbierto = elemento.classList.contains('active') ? elemento : null;
+    }
+    document.addEventListener('click', function(e) {
+      if (menuAbierto && !menuAbierto.contains(e.target)) {
+        menuAbierto.classList.remove('active');
+        menuAbierto = null;
+      }
+    });
+
+    function abrirWhatsApp() {
+      window.open('https://wa.me/TU_NUMERO?text=' + encodeURIComponent('¡Hola! Quisiera agendar una cita en RC DRAG SERVICE.'), '_blank');
+    }
+  </script>
+</body>
+</html>
