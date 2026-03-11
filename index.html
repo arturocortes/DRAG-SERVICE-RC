@@ -32,23 +32,16 @@
 
     /* ===== NAVBAR ===== */
     .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: #0d0d0d;
-      border-bottom: 2px solid var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 2rem;
-      height: 64px;
+      position: sticky; top: 0; z-index: 1000;
+      background: #0d0d0d; border-bottom: 2px solid var(--primary);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 64px;
     }
 
     .navbar-logo { display: flex; align-items: center; gap: 12px; }
 
     .navbar-logo .logo-circle {
-      width: 42px; height: 42px;
-      border-radius: 50%;
+      width: 42px; height: 42px; border-radius: 50%;
       background: var(--primary);
       display: flex; align-items: center; justify-content: center;
       font-size: 1.2rem; overflow: hidden;
@@ -74,7 +67,7 @@
     .navbar-cta {
       background: var(--primary); color: white !important;
       padding: 8px 20px; border-radius: 4px;
-      font-weight: 700 !important; transition: background 0.2s !important;
+      font-weight: 700 !important;
     }
 
     .navbar-cta:hover { background: #b30500 !important; }
@@ -92,19 +85,15 @@
       box-shadow: 0 6px 20px rgba(225,6,0,0.4);
     }
 
-    /* ===== SECCIONES ALTERNAS ===== */
-    .section { border-bottom: 1px solid var(--border); }
-
-    .section-row {
+    /* ===== BLOQUE UNIVERSAL ===== */
+    .bloque {
       display: grid;
       grid-template-columns: 1fr 1fr;
       min-height: 360px;
+      border-bottom: 1px solid var(--border);
     }
 
-    .section-row.reverse { direction: rtl; }
-    .section-row.reverse > * { direction: ltr; }
-
-    .section-text {
+    .bloque-texto {
       padding: 3.5rem 3rem;
       display: flex;
       flex-direction: column;
@@ -112,131 +101,54 @@
       background: var(--dark2);
     }
 
-    .section-image {
-      background: var(--dark3); overflow: hidden;
+    .bloque-imagen {
+      overflow: hidden;
       display: flex; align-items: center; justify-content: center;
-      min-height: 360px;
+      background: var(--dark3);
     }
 
-    .section-image img {
+    .bloque-imagen img {
       width: 100%; height: 100%; object-fit: cover;
       opacity: 0.85; transition: opacity 0.3s, transform 0.5s;
     }
 
-    .section-image:hover img { opacity: 1; transform: scale(1.04); }
-    .section-image .placeholder { font-size: 5rem; opacity: 0.2; }
+    .bloque-imagen:hover img { opacity: 1; transform: scale(1.04); }
+    .bloque-imagen .placeholder { font-size: 6rem; opacity: 0.18; }
 
-    .section-label {
+    .bloque-label {
       font-size: 0.75rem; letter-spacing: 0.2em;
       text-transform: uppercase; color: var(--primary);
       font-weight: 600; margin-bottom: 0.6rem;
     }
 
-    .section-text h2 {
+    .bloque-texto h2 {
       font-size: 1.9rem; font-weight: 700;
       text-transform: uppercase; letter-spacing: 0.06em;
       color: white; margin-bottom: 1rem; line-height: 1.2;
     }
 
-    .section-text p {
+    .bloque-texto h3 {
+      font-size: 1.5rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--secondary); margin-bottom: 1.8rem;
+    }
+
+    .bloque-texto p {
       font-size: 1rem; color: #bbb;
       font-style: italic; line-height: 1.75;
     }
 
-    /* ===== BLOQUE DE SERVICIOS (fondo oscuro3) ===== */
-    .servicios-section {
-      background: var(--dark3);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .servicios-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 360px;
-    }
-
-    .servicios-col-image {
-      overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-      background: var(--dark2);
-    }
-
-    .servicios-col-image img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
-    .servicios-col-image .placeholder { font-size: 6rem; opacity: 0.15; }
-
-    .servicios-col-text {
-      padding: 3.5rem 3rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      background: var(--dark2);
-      border-left: 1px solid var(--border);
-    }
-
-    .servicios-col-text h3 {
-      font-size: 1.5rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.1em;
-      color: var(--secondary); margin-bottom: 1.8rem;
-    }
-
-    /* Especialistas: texto a la izquierda */
-    .servicios-col-text-left {
-      padding: 3.5rem 3rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      background: var(--dark2);
-      border-right: 1px solid var(--border);
-    }
-
-    .servicios-col-text-left h3 {
-      font-size: 1.5rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.1em;
-      color: var(--secondary); margin-bottom: 1.8rem;
-    }
-
     .servicio-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.8rem;
-      margin-bottom: 1.4rem;
-      font-style: italic;
-      color: #ccc;
-      font-size: 1rem;
-      line-height: 1.6;
+      display: flex; align-items: flex-start;
+      gap: 0.8rem; margin-bottom: 1.4rem;
+      font-style: italic; color: #ccc;
+      font-size: 1rem; line-height: 1.6;
     }
 
     .servicio-item::before {
       content: '•'; color: var(--primary);
       font-size: 1.4rem; line-height: 1.3; flex-shrink: 0;
     }
-
-    /* ===== BLOQUE SERVICIOS 2 (fondo dark2) ===== */
-    .servicios2-section { border-bottom: 1px solid var(--border); }
-
-    .servicios2-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 360px;
-    }
-
-    .servicios2-col-text {
-      padding: 3.5rem 3rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      background: var(--dark2);
-    }
-
-    .servicios2-col-image {
-      overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-      background: var(--dark3);
-      border-left: 1px solid var(--border);
-    }
-
-    .servicios2-col-image img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
-    .servicios2-col-image .placeholder { font-size: 6rem; opacity: 0.15; }
 
     /* ===== CONTACTO ===== */
     .contacto-section {
@@ -339,20 +251,9 @@
 
       .navbar-links.open { display: flex; }
 
-      .section-row, .servicios-inner, .servicios2-inner {
-        grid-template-columns: 1fr; direction: ltr;
-      }
-
-      .section-image, .servicios-col-image, .servicios2-col-image { min-height: 220px; }
-
-      .section-text, .servicios-col-text, .servicios-col-text-left,
-      .servicios2-col-text { padding: 2rem 1.5rem; }
-
-      .servicios-col-text, .servicios-col-text-left {
-        border-left: none; border-right: none;
-        border-top: 1px solid var(--border);
-      }
-
+      .bloque { grid-template-columns: 1fr; }
+      .bloque-imagen { min-height: 220px; order: -1; }
+      .bloque-texto { padding: 2rem 1.5rem; }
       .contacto-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -378,91 +279,67 @@
     </ul>
   </nav>
 
-  <!-- NOSOTROS -->
-  <section class="section" id="nosotros">
-    <div class="section-row">
-      <div class="section-text">
-        <div class="section-label">Sobre nosotros</div>
-        <h2>En RC DRAG SERVICE</h2>
-        <p>
-          Nos dedicamos a la mecánica automotriz en general. Realizamos mantenimiento, reparación y diagnóstico para todo tipo de vehículos.<br><br>
-          Nuestro equipo de especialistas cuenta con la experiencia y las herramientas necesarias para mantener tu vehículo en óptimas condiciones.
-        </p>
-      </div>
-      <div class="section-image">
-        <img src="taller.jpg" alt="RC DRAG SERVICE" onerror="this.style.display='none'">
-        <div class="placeholder">🔧</div>
-      </div>
+  <!-- 1. TEXTO IZQ — IMAGEN DER -->
+  <div class="bloque" id="nosotros">
+    <div class="bloque-texto">
+      <div class="bloque-label">Sobre nosotros</div>
+      <h2>En RC DRAG SERVICE</h2>
+      <p>
+        Nos dedicamos a la mecánica automotriz en general. Realizamos mantenimiento, reparación y diagnóstico para todo tipo de vehículos.<br><br>
+        Nuestro equipo de especialistas cuenta con la experiencia y las herramientas necesarias para mantener tu vehículo en óptimas condiciones.
+      </p>
     </div>
-  </section>
+    <div class="bloque-imagen">
+      <img src="taller.jpg" alt="Taller" onerror="this.style.display='none'">
+      <div class="placeholder">🔧</div>
+    </div>
+  </div>
 
-  <!-- EXPERIENCIA -->
-  <section class="section">
-    <div class="section-row reverse">
-      <div class="section-text">
-        <div class="section-label">Nuestra experiencia</div>
-        <h2>Calidad y confianza en cada servicio</h2>
-        <p>
-          En RC DRAG SERVICE trabajamos con pasión por los autos y compromiso con nuestros clientes. Cada vehículo que entra a nuestro taller recibe un diagnóstico preciso y un servicio de calidad.<br><br>
-          Ya sea un mantenimiento de rutina o una reparación mayor, contamos con el equipo y los conocimientos para darte la mejor solución.
-        </p>
-      </div>
-      <div class="section-image">
-        <img src="taller2.jpg" alt="Taller RC DRAG SERVICE" onerror="this.style.display='none'">
-        <div class="placeholder">🚗</div>
-      </div>
+  <!-- 2. IMAGEN IZQ — TEXTO DER -->
+  <div class="bloque">
+    <div class="bloque-imagen">
+      <img src="taller2.jpg" alt="Experiencia" onerror="this.style.display='none'">
+      <div class="placeholder">🚗</div>
     </div>
-  </section>
+    <div class="bloque-texto">
+      <div class="bloque-label">Nuestra experiencia</div>
+      <h2>Calidad y confianza en cada servicio</h2>
+      <p>
+        En RC DRAG SERVICE trabajamos con pasión por los autos y compromiso con nuestros clientes. Cada vehículo que entra a nuestro taller recibe un diagnóstico preciso y un servicio de calidad.<br><br>
+        Ya sea un mantenimiento de rutina o una reparación mayor, contamos con el equipo y los conocimientos para darte la mejor solución.
+      </p>
+    </div>
+  </div>
 
-  <!-- NUESTROS SERVICIOS: imagen izq, texto der -->
-  <section class="servicios-section" id="servicios">
-    <div class="servicios-inner">
-      <div class="servicios-col-image">
-        <img src="servicios.jpg" alt="Servicios" onerror="this.style.display='none'">
-        <div class="placeholder">🔩</div>
-      </div>
-      <div class="servicios-col-text">
-        <h3>Nuestros Servicios</h3>
-        <div class="servicio-item">Mecánica en general.</div>
-        <div class="servicio-item">Mantenimiento preventivo y correctivo.</div>
-        <div class="servicio-item">Modificación de motores.</div>
-        <div class="servicio-item">Instalación de escapes.</div>
-      </div>
+  <!-- 3. TEXTO IZQ — IMAGEN DER -->
+  <div class="bloque" id="servicios">
+    <div class="bloque-texto">
+      <h3>Nuestros Servicios</h3>
+      <div class="servicio-item">Mecánica en general.</div>
+      <div class="servicio-item">Mantenimiento preventivo y correctivo.</div>
+      <div class="servicio-item">Modificación de motores.</div>
+      <div class="servicio-item">Instalación de escapes.</div>
     </div>
-  </section>
+    <div class="bloque-imagen">
+      <img src="servicios.jpg" alt="Servicios" onerror="this.style.display='none'">
+      <div class="placeholder">🔩</div>
+    </div>
+  </div>
 
-  <!-- SERVICIOS DETALLADOS: texto izq, imagen der -->
-  <section class="servicios2-section">
-    <div class="servicios2-inner">
-      <div class="servicios2-col-text">
-        <div class="servicio-item">Mecánica en general para todo tipo de vehículos.</div>
-        <div class="servicio-item">Mantenimiento preventivo y correctivo con diagnóstico preciso.</div>
-        <div class="servicio-item">Modificación de motores de alto rendimiento.</div>
-        <div class="servicio-item">Instalación profesional de escapes de competencia y street.</div>
-      </div>
-      <div class="servicios2-col-image">
-        <img src="motor.jpg" alt="Motor" onerror="this.style.display='none'">
-        <div class="placeholder">⚙️</div>
-      </div>
+  <!-- 4. IMAGEN IZQ — TEXTO DER -->
+  <div class="bloque">
+    <div class="bloque-imagen">
+      <img src="especialistas.jpg" alt="Especialistas" onerror="this.style.display='none'">
+      <div class="placeholder">🏁</div>
     </div>
-  </section>
-
-  <!-- ESPECIALISTAS EN: texto izq, imagen der -->
-  <section class="servicios-section">
-    <div class="servicios-inner">
-      <div class="servicios-col-text-left">
-        <h3>Especialistas en</h3>
-        <div class="servicio-item">Instalación de kits de <strong style="color:white;">Óxido Nitroso (NOS)</strong> para mayor potencia.</div>
-        <div class="servicio-item">Instalación de kits de <strong style="color:white;">Turbocompresor</strong> — más fuerza, más velocidad.</div>
-        <div class="servicio-item">Instalación de <strong style="color:white;">Headers y colectores</strong> de alto flujo para mejor desempeño.</div>
-        <div class="servicio-item">Y mucho más — <em>consulta con nosotros para personalizar tu vehículo.</em></div>
-      </div>
-      <div class="servicios-col-image">
-        <img src="especialistas.jpg" alt="Especialistas" onerror="this.style.display='none'">
-        <div class="placeholder">🏁</div>
-      </div>
+    <div class="bloque-texto">
+      <h3>Especialistas en</h3>
+      <div class="servicio-item">Instalación de kits de <strong style="color:white;">Óxido Nitroso (NOS)</strong> para mayor potencia.</div>
+      <div class="servicio-item">Instalación de kits de <strong style="color:white;">Turbocompresor</strong> — más fuerza, más velocidad.</div>
+      <div class="servicio-item">Instalación de <strong style="color:white;">Headers y colectores</strong> de alto flujo para mejor desempeño.</div>
+      <div class="servicio-item">Y mucho más — <em>consulta con nosotros para personalizar tu vehículo.</em></div>
     </div>
-  </section>
+  </div>
 
   <!-- CONTACTO -->
   <section class="contacto-section" id="contacto">
