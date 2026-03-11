@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RC DRAG SERVICE - Fiestas Infantiles Inolvidables</title>
+  <title>RC DRAG SERVICE - Taller Mecánico</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Barlow:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <style>
@@ -110,43 +110,6 @@
 
     .navbar-cta:hover { background: #b30500 !important; color: white !important; }
 
-    /* ===== HEADER TITLE BAR ===== */
-    .header-bar {
-      background: var(--dark2);
-      border-bottom: 1px solid var(--border);
-      padding: 1.2rem 2rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .header-bar .logo-box {
-      width: 54px;
-      height: 54px;
-      border-radius: 8px;
-      background: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-
-    .header-bar .logo-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .header-bar h1 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: white;
-    }
-
     .btn {
       display: inline-block;
       background: var(--primary);
@@ -212,7 +175,6 @@
     }
 
     .section-image:hover img { opacity: 1; transform: scale(1.04); }
-
     .section-image .placeholder { font-size: 5rem; opacity: 0.2; }
 
     .section-label {
@@ -401,7 +363,6 @@
     }
 
     .redes-sociales { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-
     .social-dropdown { position: relative; display: inline-block; }
 
     .social-menu {
@@ -445,268 +406,4 @@
       background: var(--dark3);
       border: 1px solid var(--border);
       color: #ccc;
-      border-radius: 4px;
-      font-size: 1.3rem;
-      cursor: pointer;
-      transition: all 0.25s;
-    }
-
-    .social-icon:hover,
-    .social-dropdown.active .social-icon {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: #0d0d0d;
-      border-top: 2px solid var(--primary);
-      padding: 1.8rem 2rem;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #555;
-      font-family: 'Rajdhani', sans-serif;
-      letter-spacing: 0.06em;
-    }
-
-    /* ===== HAMBURGER ===== */
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-    .hamburger span { display: block; width: 24px; height: 2px; background: white; transition: all 0.3s; }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      .hamburger { display: flex; }
-
-      .navbar-links {
-        display: none;
-        position: absolute;
-        top: 64px;
-        left: 0;
-        right: 0;
-        background: #0d0d0d;
-        flex-direction: column;
-        padding: 1.5rem 2rem;
-        gap: 1rem;
-        border-bottom: 2px solid var(--primary);
-      }
-
-      .navbar-links.open { display: flex; }
-
-      .section-row,
-      .servicios-inner,
-      .servicios2-inner {
-        grid-template-columns: 1fr;
-        direction: ltr;
-      }
-
-      .servicios-col-text,
-      .servicios2-col-text { border-left: none; border-top: 1px solid var(--border); }
-
-      .section-image,
-      .servicios-col-image,
-      .servicios2-col-image { min-height: 220px; }
-
-      .section-text { padding: 2.5rem 1.5rem; }
-      .servicios-col-text, .servicios2-col-text { padding: 2rem 1.5rem; }
-
-      .contacto-grid { grid-template-columns: 1fr; }
-      .header-bar h1 { font-size: 1.3rem; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="navbar-logo">
-      <div class="logo-circle">
-        <img src="logomcqueen.jpg" alt="Logo" onerror="this.style.display='none';this.parentNode.textContent='🏎️'">
-      </div>
-      <span>RC DRAG SERVICE</span>
-    </div>
-
-    <div class="hamburger" onclick="toggleNav()">
-      <span></span><span></span><span></span>
-    </div>
-
-    <ul class="navbar-links" id="navLinks">
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-      <li><a href="#contacto" class="navbar-cta">¡Cotiza ya!</a></li>
-    </ul>
-  </nav>
-
-  <!-- HEADER BAR -->
-  <div class="header-bar">
-    <div class="logo-box">
-      <img src="logomcqueen.jpg" alt="Logo" onerror="this.style.display='none';this.parentNode.textContent='🏎️'">
-    </div>
-    <h1>RC DRAG SERVICE</h1>
-  </div>
-
-  <!-- SECCIÓN 1: Nosotros -->
-  <section class="section" id="nosotros">
-    <div class="section-row">
-      <div class="section-text">
-        <div class="section-label">Sobre nosotros</div>
-        <h2>En Festejando con Rayo y Mate</h2>
-        <p>
-          No solo es una fiesta, es felicidad, alegría, emoción y diversión. Tu hijo vivirá la magia de 0 a 100 km/h al ver la llegada de Rayo McQueen con su mejor amigo Mate.<br><br>
-          Nos especializamos en crear una experiencia única donde los personajes favoritos de tu peque llegan cobrando vida desde Radiador Springs, generando un recuerdo inolvidable en la memoria del fan #1 de Cars.
-        </p>
-      </div>
-      <div class="section-image">
-        <img src="Rayo y Mate Good.jpg" alt="Rayo y Mate" onerror="this.style.display='none'">
-        <div class="placeholder">🏎️</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECCIÓN 2: Historia -->
-  <section class="section">
-    <div class="section-row reverse">
-      <div class="section-text">
-        <div class="section-label">Nuestra historia</div>
-        <h2>Juntos somos únicos</h2>
-        <p>
-          Comenzamos en 2023 este mágico proyecto familiar con la finalidad de llevar alegría a niños de hospitales, orfanatos y casas hogar como proyecto altruista.<br><br>
-          Hoy encontramos una nueva manera de impulsar este proyecto y el apoyo que brindamos a todos los niños y niñas que se encuentran en estas situaciones — porque juntos podemos aportar solidaridad, empatía y esperanza.
-        </p>
-      </div>
-      <div class="section-image">
-        <img src="RM edit.jpg" alt="Proyecto altruista" onerror="this.style.display='none'">
-        <div class="placeholder">❤️</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICIOS -->
-  <section class="servicios-section" id="servicios">
-    <div class="servicios-inner">
-      <div class="servicios-col-image">
-        <img src="Rayo y Mate Good.jpg" alt="Servicios" onerror="this.style.display='none'">
-        <div class="placeholder">🏎️</div>
-      </div>
-      <div class="servicios-col-text">
-        <h3>Nuestros Servicios</h3>
-        <div class="servicio-item">Los personajes cobran vida — Rayo McQueen y Mate en tu fiesta.</div>
-        <div class="servicio-item">Grabación con Dron de alta resolución con tomas aéreas del evento.</div>
-        <div class="servicio-item">Regalo especial para el festejado al final de la aventura.</div>
-        <div class="servicio-item">Invitación digital personalizada con los personajes de Cars.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICIOS 2 -->
-  <section class="servicios2-section">
-    <div class="servicios2-inner">
-      <div class="servicios2-col-text">
-        <div class="servicio-item">Los personajes cobran vida — Rayo McQueen y Mate en tu fiesta.</div>
-        <div class="servicio-item">Grabación con Dron de alta resolución con tomas aéreas del evento.</div>
-        <div class="servicio-item">Regalo especial para el festejado al final de la aventura.</div>
-        <div class="servicio-item">Invitación digital personalizada con los personajes de Cars.</div>
-      </div>
-      <div class="servicios2-col-image">
-        <img src="Dron.jpg" alt="Dron" onerror="this.style.display='none'">
-        <div class="placeholder">🚁</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section class="contacto-section" id="contacto">
-    <div class="contacto-inner">
-      <h2>¡Hagamos mágica tu fiesta!</h2>
-      <p>Cotiza sin costo y regálale a tu hijo el mejor día de su vida</p>
-      <br>
-      <a href="tel:+525610703139" class="btn" style="margin-bottom:2.5rem;">Cotiza sin costo</a>
-
-      <div class="contacto-grid">
-        <div class="contacto-card" onclick="window.location.href='tel:+525610703139'">
-          <i class="fas fa-phone"></i>
-          <h4>Teléfono</h4>
-          <p>56-1070-3139</p>
-          <small>Click para llamar</small>
-        </div>
-        <div class="contacto-card" onclick="window.location.href='mailto:mate.0413qro@gmail.com?subject=Cotización para fiesta infantil'">
-          <i class="fas fa-envelope"></i>
-          <h4>Email</h4>
-          <p>mate.0413qro@gmail.com</p>
-          <small>Click para escribir</small>
-        </div>
-        <div class="contacto-card">
-          <i class="fas fa-map-marker-alt"></i>
-          <h4>Ubicación</h4>
-          <p>Santiago de Querétaro, Qro.</p>
-        </div>
-      </div>
-
-      <p class="redes-title">Síguenos en redes</p>
-      <div class="redes-sociales">
-        <div class="social-dropdown">
-          <div class="social-icon" onclick="toggleMenu(this.parentNode, event)">
-            <i class="fab fa-facebook-f"></i>
-          </div>
-          <div class="social-menu">
-            <a href="https://www.facebook.com/profile.php?id=61557902633630" class="social-option" target="_blank">Fanpage Principal</a>
-          </div>
-        </div>
-        <div class="social-dropdown">
-          <div class="social-icon" onclick="toggleMenu(this.parentNode, event)">
-            <i class="fab fa-instagram"></i>
-          </div>
-          <div class="social-menu">
-            <a href="https://www.instagram.com/rayomqqro" class="social-option" target="_blank">@rayo_oficial</a>
-            <a href="https://www.instagram.com/mate_remolcandoysalvando" class="social-option" target="_blank">@mate_oficial</a>
-          </div>
-        </div>
-        <div class="social-dropdown">
-          <div class="social-icon" onclick="toggleMenu(this.parentNode, event)">
-            <i class="fab fa-tiktok"></i>
-          </div>
-          <div class="social-menu">
-            <a href="https://www.tiktok.com/@mate_remolcandoysalvando" class="social-option" target="_blank">@mate_remolcandoysalvando</a>
-            <a href="https://www.tiktok.com/@rayo.mcqueen.qro" class="social-option" target="_blank">@rayo_mcqueen_qro</a>
-          </div>
-        </div>
-        <div class="social-dropdown">
-          <div class="social-icon" onclick="abrirWhatsApp()">
-            <i class="fab fa-whatsapp"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 RC DRAG SERVICE — Todos los derechos reservados — Santiago de Querétaro, Qro.</p>
-  </footer>
-
-  <script>
-    function toggleNav() {
-      document.getElementById('navLinks').classList.toggle('open');
-    }
-
-    let menuAbierto = null;
-    function toggleMenu(elemento, event) {
-      if (event) event.stopPropagation();
-      if (menuAbierto && menuAbierto !== elemento) menuAbierto.classList.remove('active');
-      elemento.classList.toggle('active');
-      menuAbierto = elemento.classList.contains('active') ? elemento : null;
-    }
-    document.addEventListener('click', function(e) {
-      if (menuAbierto && !menuAbierto.contains(e.target)) {
-        menuAbierto.classList.remove('active');
-        menuAbierto = null;
-      }
-    });
-
-    function abrirWhatsApp() {
-      window.open('https://wa.me/525610703139?text=' + encodeURIComponent('¡Hola! Estoy interesado(a) en sus servicios para la fiesta de mi hijo(a). ¿Podrían enviarme información?'), '_blank');
-    }
-  </script>
-</body>
-</html>
+      b
