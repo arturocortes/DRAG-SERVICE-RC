@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rayo y Mate - Fiestas Infantiles Inolvidables</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Barlow:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #E10600;
+      --secondary: #FFD700;
+      --accent: #0066CC;
+      --dark: #111111;
+      --dark2: #1a1a1a;
+      --dark3: #222222;
+      --light: #f0f0f0;
+      --gray: #888;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background-color: var(--dark);
+      color: var(--light);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, nav {
+      font-family: 'Rajdhani', sans-serif;
+      letter-spacing: 0.03em;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #0d0d0d;
+      border-bottom: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 64px;
+    }
+
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .navbar-logo .logo-circle {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      overflow: hidden;
+    }
+
+    .navbar-logo .logo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .navbar-logo span {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    .navbar-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .navbar-links a {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #ccc;
+      transition: color 0.2s;
+    }
+
+    .navbar-links a:hover { color: var(--secondary); }
+
+    .navbar-cta {
+      background: var(--primary);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: 4px;
+      font-weight: 700 !important;
+      transition: background 0.2s !important;
+    }
+
+    .navbar-cta:hover { background: #b30500 !important; color: white !important; }
+
+    /* ===== HEADER TITLE BAR ===== */
+    .header-bar {
+      background: var(--dark2);
+      border-bottom: 1px solid var(--border);
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .header-bar .logo-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 8px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .header-bar .logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .header-bar h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: white;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      background: linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.85)),
+                  url('Rayo y Mate Good.jpg') no-repeat center center / cover;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      border-bottom: 3px solid var(--primary);
+    }
+
+    .hero-content h2 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.25rem;
+      color: #ddd;
+      max-width: 620px;
+      margin: 0 auto 2rem;
+      font-style: italic;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 12px 32px;
+      border-radius: 4px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #b30500;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(225,6,0,0.4);
+    }
+
+    /* ===== SECCIONES GENERALES ===== */
+    .section {
+      padding: 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Layout alterno: texto izquierda, imagen derecha */
+    .section-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 320px;
+    }
+
+    .section-row.reverse {
+      direction: rtl;
+    }
+
+    .section-row.reverse > * {
+      direction: ltr;
+    }
+
+    .section-text {
+      padding: 3.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--dark2);
+    }
+
+    .section-image {
+      background: var(--dark3);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+      position: relative;
+    }
+
+    .section-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0.85;
+      transition: opacity 0.3s, transform 0.5s;
+    }
+
+    .section-image:hover img {
+      opacity: 1;
+      transform: scale(1.04);
+    }
+
+    /* Placeholder cuando no hay imagen */
+    .section-image .placeholder {
+      font-size: 5rem;
+      opacity: 0.2;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-text h2 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: white;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section-text p {
+      font-size: 1rem;
+      color: #bbb;
+      font-style: italic;
+      line-height: 1.75;
+    }
+
+    /* ===== SERVICIOS (bullets estilo RC Drag) ===== */
+    .servicios-section {
+      background: var(--dark3);
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .servicios-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .servicios-col-image {
+      background: var(--dark2);
+      min-height: 360px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .servicios-col-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+
+    .servicios-col-image .placeholder {
+      font-size: 6rem;
+      opacity: 0.15;
+    }
+
+    .servicios-col-text {
+      padding: 3rem;
+      background: var(--dark2);
+      border-left: 1px solid var(--border);
+    }
+
+    .servicios-col-text h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--secondary);
+      margin-bottom: 1.8rem;
+    }
+
+    .servicio-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+      font-style: italic;
+      color: #ccc;
+      font-size: 1rem;
+    }
+
+    .servicio-item::before {
+      content: '•';
+      color: var(--primary);
+      font-size: 1.4rem;
+      line-height: 1.3;
+      flex-shrink: 0;
+    }
+
+    /* ===== SEGUNDA LISTA DE SERVICIOS (izquierda) ===== */
+    .servicios2-section {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .servicios2-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .servicios2-col-text {
+      padding: 3.5rem 3rem;
+      background: var(--dark2);
+    }
+
+    .servicios2-col-text .servicio-item {
+      font-size: 1.05rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .servicios2-col-image {
+      background: var(--dark3);
+      min-height: 320px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-left: 1px solid var(--border);
+    }
+
+    .servicios2-col-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+
+    .servicios2-col-image .placeholder {
+      font-size: 6rem;
+      opacity: 0.15;
+    }
+
+    /* ===== CONTACTO ===== */
+    .contacto-section {
+      background: var(--dark2);
+      padding: 4rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contacto-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contacto-inner h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .contacto-inner > p {
+      color: #aaa;
+      font-style: italic;
+      margin-bottom: 3rem;
+    }
+
+    .contacto-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .contacto-card {
+      background: var(--dark3);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--primary);
+      padding: 2rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.25s;
+      text-align: center;
+    }
+
+    .contacto-card:hover {
+      background: #2a2a2a;
+      transform: translateY(-4px);
+      border-top-color: var(--secondary);
+    }
+
+    .contacto-card i {
+      font-size: 2rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .contacto-card h4 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .contacto-card p {
+      font-size: 0.9rem;
+      color: #aaa;
+      font-style: italic;
+    }
+
+    .contacto-card small {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--primary);
+      margin-top: 0.4rem;
+    }
+
+    /* Redes sociales */
+    .redes-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .redes-sociales {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .social-dropdown { position: relative; display: inline-block; }
+
+    .social-menu {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1e1e1e;
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--primary);
+      border-radius: 4px;
+      padding: 8px;
+      min-width: 200px;
+      z-index: 100;
+    }
+
+    .social-dropdown.active .social-menu { display: block; }
+
+    .social-option {
+      display: block;
+      padding: 8px 14px;
+      color: #ccc;
+      text-decoration: none;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      border-radius: 3px;
+      margin: 3px 0;
+      transition: all 0.2s;
+    }
+
+    .social-option:hover { background: var(--primary); color: white; }
+
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: var(--dark3);
+      border: 1px solid var(--border);
+      color: #ccc;
+      border-radius: 4px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .social-icon:hover,
+    .social-dropdown.active .social-icon {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0d0d0d;
+      border-top: 2px solid var(--primary);
+      padding: 1.8rem 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #555;
+      font-family: 'Rajdhani', sans-serif;
+      letter-spacing: 0.06em;
+    }
+
+    /* ===== BOTÓN MÚSICA ===== */
+    #boton-musica {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      padding: 10px 18px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: #1a1a1a;
+      color: white;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    #boton-musica:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* ===== HAMBURGER MOBILE ===== */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: white;
+      transition: all 0.3s;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+
+      .navbar-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #0d0d0d;
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+        gap: 1rem;
+        border-bottom: 2px solid var(--primary);
+      }
+
+      .navbar-links.open { display: flex; }
+
+      .section-row,
+      .servicios-inner,
+      .servicios2-inner {
+        grid-template-columns: 1fr;
+        direction: ltr;
+      }
+
+      .servicios-col-text,
+      .servicios2-col-text { border-left: none; border-top: 1px solid var(--border); }
+
+      .section-image,
+      .servicios-col-image,
+      .servicios2-col-image { min-height: 220px; }
+
+      .section-text { padding: 2.5rem 1.5rem; }
+      .servicios-col-text, .servicios2-col-text { padding: 2rem 1.5rem; }
+
+      .hero-content h2 { font-size: 2.2rem; }
+
+      .contacto-grid { grid-template-columns: 1fr; }
+
+      .header-bar h1 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <div class="logo-circle">
+        <img src="logomcqueen.jpg" alt="Logo" onerror="this.style.display='none';this.parentNode.textContent='🏎️'">
+      </div>
+      <span>Rayo y Mate</span>
+    </div>
+
+    <div class="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+
+    <ul class="navbar-links" id="navLinks">
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#contacto" class="navbar-cta">¡Cotiza ya!</a></li>
+    </ul>
+  </nav>
+
+  <!-- HEADER BAR (logo + título como RC Drag) -->
+  <div class="header-bar">
+    <div class="logo-box">
+      <img src="logomcqueen.jpg" alt="Logo" onerror="this.style.display='none';this.parentNode.textContent='🏎️'">
+    </div>
+    <h1>Festejando con Rayo y Mate</h1>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>¡Su sueño hecho realidad!</h2>
+      <p>Sorprende a tu peque e invitados con la llegada de Mate y Rayo McQueen a su fiesta.</p>
+      <a href="#contacto" class="btn">Cotiza sin costo</a>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 1: Nosotros — texto izquierda, imagen derecha -->
+  <section class="section" id="nosotros">
+    <div class="section-row">
+      <div class="section-text">
+        <div class="section-label">Sobre nosotros</div>
+        <h2>En Festejando con Rayo y Mate</h2>
+        <p>
+          No solo es una fiesta, es felicidad, alegría, emoción y diversión. Tu hijo vivirá la magia de 0 a 100 km/h al ver la llegada de Rayo McQueen con su mejor amigo Mate.<br><br>
+          Nos especializamos en crear una experiencia única donde los personajes favoritos de tu peque llegan cobrando vida desde Radiador Springs, generando un recuerdo inolvidable en la memoria del fan #1 de Cars.
+        </p>
+      </div>
+      <div class="section-image">
+        <img src="Rayo y Mate Good.jpg" alt="Rayo y Mate" onerror="this.style.display='none'">
+        <div class="placeholder">🏎️</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: Historia — imagen izquierda, texto derecha -->
+  <section class="section">
+    <div class="section-row reverse">
+      <div class="section-text">
+        <div class="section-label">Nuestra historia</div>
+        <h2>Juntos somos únicos</h2>
+        <p>
+          Comenzamos en 2023 este mágico proyecto familiar con la finalidad de llevar alegría a niños de hospitales, orfanatos y casas hogar como proyecto altruista.<br><br>
+          Hoy encontramos una nueva manera de impulsar este proyecto y el apoyo que brindamos a todos los niños y niñas que se encuentran en estas situaciones — porque juntos podemos aportar solidaridad, empatía y esperanza.
+        </p>
+      </div>
+      <div class="section-image">
+        <img src="RM edit.jpg" alt="Proyecto altruista" onerror="this.style.display='none'">
+        <div class="placeholder">❤️</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS: texto derecha, imagen izquierda (como RC Drag) -->
+  <section class="servicios-section" id="servicios">
+    <div class="servicios-inner">
+      <div class="servicios-col-image">
+        <img src="Rayo y Mate Good.jpg" alt="Servicios" onerror="this.style.display='none'">
+        <div class="placeholder">🏎️</div>
+      </div>
+      <div class="servicios-col-text">
+        <h3>Nuestros Servicios</h3>
+        <div class="servicio-item">Los personajes cobran vida — Rayo McQueen y Mate en tu fiesta.</div>
+        <div class="servicio-item">Grabación con Dron de alta resolución con tomas aéreas del evento.</div>
+        <div class="servicio-item">Regalo especial para el festejado al final de la aventura.</div>
+        <div class="servicio-item">Invitación digital personalizada con los personajes de Cars.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEGUNDA LISTA DE SERVICIOS: texto izquierda, imagen derecha -->
+  <section class="servicios2-section">
+    <div class="servicios2-inner">
+      <div class="servicios2-col-text">
+        <div class="servicio-item">Los personajes cobran vida — Rayo McQueen y Mate en tu fiesta.</div>
+        <div class="servicio-item">Grabación con Dron de alta resolución con tomas aéreas del evento.</div>
+        <div class="servicio-item">Regalo especial para el festejado al final de la aventura.</div>
+        <div class="servicio-item">Invitación digital personalizada con los personajes de Cars.</div>
+      </div>
+      <div class="servicios2-col-image">
+        <img src="Dron.jpg" alt="Dron" onerror="this.style.display='none'">
+        <div class="placeholder">🚁</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto-section" id="contacto">
+    <div class="contacto-inner">
+      <h2>¡Hagamos mágica tu fiesta!</h2>
+      <p>Cotiza sin costo y regálale a tu hijo el mejor día de su vida</p>
+
+      <div class="contacto-grid">
+        <div class="contacto-card" onclick="window.location.href='tel:+525610703139'">
+          <i class="fas fa-phone"></i>
+          <h4>Teléfono</h4>
+          <p>56-1070-3139</p>
+          <small>Click para llamar</small>
+        </div>
+        <div class="contacto-card" onclick="window.location.href='mailto:mate.0413qro@gmail.com?subject=Cotización para fiesta infantil'">
+          <i class="fas fa-envelope"></i>
+          <h4>Email</h4>
+          <p>mate.0413qro@gmail.com</p>
+          <small>Click para escribir</small>
+        </div>
+        <div class="contacto-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <h4>Ubicación</h4>
+          <p>Santiago de Querétaro, Qro.</p>
+        </div>
+      </div>
+
+      <p class="redes-title">Síguenos en redes</p>
+      <div class="redes-sociales">
+        <!-- Facebook -->
+        <div class="social-dropdown">
+          <div class="social-icon" onclick="toggleMenu(this.parentNode, event)">
+            <i class="fab fa-facebook-f"></i>
+          </div>
+          <div class="social-menu">
+            <a href="https://www.facebook.com/profile.php?id=61557902633630" class="social-option" target="_blank">Fanpage Principal</a>
+          </div>
+        </div>
+        <!-- Instagram -->
+        <div class="social-dropdown">
+          <div class="social-icon" onclick="toggleMenu(this.parentNode, event)">
+            <i class="fab fa-instagram"></i>
+          </div>
+          <div class="social-menu">
+            <a href="https://www.instagram.com/rayomqqro" class="social-option" target="_blank">@rayo_oficial</a>
+            <a href="https://www.instagram.com/mate_remolcandoysalvando" class="social-option" target="_blank">@mate_oficial</a>
+          </div>
+        </div>
+        <!-- TikTok -->
+        <div class="social-dropdown">
+          <div class="social-icon" onclick="toggleMenu(this.parentNode, event)">
+            <i class="fab fa-tiktok"></i>
+          </div>
+          <div class="social-menu">
+            <a href="https://www.tiktok.com/@mate_remolcandoysalvando" class="social-option" target="_blank">@mate_remolcandoysalvando</a>
+            <a href="https://www.tiktok.com/@rayo.mcqueen.qro" class="social-option" target="_blank">@rayo_mcqueen_qro</a>
+          </div>
+        </div>
+        <!-- WhatsApp -->
+        <div class="social-dropdown">
+          <div class="social-icon" onclick="abrirWhatsApp()">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 FESTEJANDO CON RAYO Y MATE — Todos los derechos reservados — Santiago de Querétaro, Qro.</p>
+  </footer>
+
+  <!-- MÚSICA -->
+  <button id="boton-musica">🔊 MÚSICA ON</button>
+  <audio id="audio-fondo" loop>
+    <source src="Life Is A Highway.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Navbar mobile
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    // Menús sociales
+    let menuAbierto = null;
+    function toggleMenu(elemento, event) {
+      if (event) event.stopPropagation();
+      if (menuAbierto && menuAbierto !== elemento) menuAbierto.classList.remove('active');
+      elemento.classList.toggle('active');
+      menuAbierto = elemento.classList.contains('active') ? elemento : null;
+    }
+    document.addEventListener('click', function(e) {
+      if (menuAbierto && !menuAbierto.contains(e.target)) {
+        menuAbierto.classList.remove('active');
+        menuAbierto = null;
+      }
+    });
+
+    // WhatsApp
+    function abrirWhatsApp() {
+      window.open('https://wa.me/525610703139?text=' + encodeURIComponent('¡Hola! Estoy interesado(a) en sus servicios para la fiesta de mi hijo(a). ¿Podrían enviarme información?'), '_blank');
+    }
+
+    // Música
+    document.addEventListener('DOMContentLoaded', function () {
+      const boton = document.getElementById('boton-musica');
+      const audio = document.getElementById('audio-fondo');
+      let encendida = false;
+
+      boton.textContent = '▶️ ACTIVAR MÚSICA';
+
+      setTimeout(() => {
+        audio.play().then(() => {
+          boton.textContent = '🔊 MÚSICA ON';
+          encendida = true;
+        }).catch(() => {
+          boton.textContent = '▶️ ACTIVAR MÚSICA';
+          encendida = false;
+        });
+      }, 1000);
+
+      boton.addEventListener('click', function () {
+        if (encendida) {
+          audio.pause();
+          boton.textContent = '▶️ ACTIVAR MÚSICA';
+        } else {
+          audio.play();
+          boton.textContent = '🔊 MÚSICA ON';
+        }
+        encendida = !encendida;
+      });
+    });
+  </script>
+</body>
+</html>
